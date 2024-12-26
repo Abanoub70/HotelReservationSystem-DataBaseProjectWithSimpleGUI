@@ -151,7 +151,6 @@ background_photo = ImageTk.PhotoImage(background_image)
 background_label = tk.Label(root, image=background_photo)
 background_label.place(relwidth=1, relheight=1) # This will make the background image cover the whole window
 
-# Your existing GUI code
 tk.Label(root, text="Passport Number:").grid(row=0, column=0)
 
 
