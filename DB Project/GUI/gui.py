@@ -1,6 +1,8 @@
 import tkinter as tk
 from tkinter import messagebox
 import sqlite3
+from PIL import Image, ImageTk
+
 
 # Connect to the SQLite database with the new path
 db_path = r"C:\Users\abano\Desktop\DB Project\DataBase\Final-HotelReservation.db"
@@ -138,6 +140,20 @@ def update_record(table_name, record_id, column_name, new_value):
 # GUI Setup
 root = tk.Tk()
 root.title("Hotel Reservation System")
+
+
+# Load the background image
+background_image = Image.open(r"C:\Users\abano\Desktop\DB Project\GUI\hotel3.png")  # Replace with your image path
+background_image = background_image.resize((root.winfo_screenwidth(), root.winfo_screenheight()), Image.Resampling.LANCZOS)
+background_photo = ImageTk.PhotoImage(background_image)
+
+# Set the background using a label
+background_label = tk.Label(root, image=background_photo)
+background_label.place(relwidth=1, relheight=1) # This will make the background image cover the whole window
+
+# Your existing GUI code
+tk.Label(root, text="Passport Number:").grid(row=0, column=0)
+
 
 # Guest section
 tk.Label(root, text="Passport Number:").grid(row=0, column=0)
